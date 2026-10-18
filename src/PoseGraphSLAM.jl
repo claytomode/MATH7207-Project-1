@@ -53,6 +53,6 @@ export pose_cost, residuals, residual_and_jacobian, jacobian_finite_difference
 export jacobian_discrepancy, pose_error, disconnected_poses
 export dead_reckoning, spectral_initialization, levenberg_marquardt, solve, compare, init_label
 export loop_graph, toy_graph, toy_evaluation_state, disconnected_graph
-export noiseless_graph, moderate_graph, grid_graph, hard_graph, maze_graph, crazy_maze
+export noiseless_graph, moderate_graph, grid_graph, hard_graph, spiral_graph, hard_spiral
 
 end

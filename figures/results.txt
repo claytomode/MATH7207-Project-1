@@ -24,12 +24,12 @@ spectral                 9657        157.6         10       0.1945      1.515 de
 Dead-reckoning heading error at the last pose, before refinement: -154.8 deg
 Dead reckoning stopped in a worse basin. The spectral start finished near the ground truth.
 
-Maze, large heading noise
--------------------------
+Spiral, large heading noise
+---------------------------
 start               init cost   final cost      iters     pos RMSE   heading RMSE     gradient
-dead reckoning      1.215e+08    3.057e+05         40        23.01    156.210 deg         1.83
-spectral                 3834        668.4         28       0.4455      8.127 deg     3.44e-07
-Dead-reckoning heading error at the last pose, before refinement: -86.8 deg
+dead reckoning      1.693e+07         9542         77        5.999    109.616 deg     6.16e-06
+spectral                 6615        226.4         27       0.0688      1.290 deg     2.34e-06
+Dead-reckoning heading error at the last pose, before refinement: 136.8 deg
 Dead reckoning stopped in a worse basin. The spectral start finished near the ground truth.
 
 Disconnected graph

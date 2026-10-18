@@ -3,18 +3,16 @@
 using Plots
 using Printf
 
-function save_figures(directory, name, graph, comparison; subtitle = "", walls = nothing)
+function save_figures(directory, name, graph, comparison; subtitle = "")
     graph.truth === nothing && error("figures need a ground-truth trajectory")
     mkpath(directory)
-    xlimits, ylimits = _limits(graph, comparison, walls)
+    xlimits, ylimits = _limits(graph, comparison)
     colors = palette(:default)
-    left = _paths(graph, comparison.dead_reckoning, walls;
+    left = _paths(graph, comparison.dead_reckoning;
         title = "Dead reckoning", color = colors[1], xlimits, ylimits)
-    right = _paths(graph, comparison.spectral, walls;
+    right = _paths(graph, comparison.spectral;
         title = "Spectral", color = colors[2], xlimits, ylimits)
-    note = walls === nothing ?
-        "Dashed is the start. Solid is after LM. Black is ground truth. Gray is the loop closure." :
-        "Dashed is the start. Solid is after LM. Black is ground truth. Gray is a wall."
+    note = "Dashed is the start. Solid is after LM. Black is ground truth. Gray is the loop closure."
     paths = plot(left, right;
         layout = (1, 2),
         size = (1000, 560),
@@ -30,7 +28,7 @@ function save_figures(directory, name, graph, comparison; subtitle = "", walls =
     return paths_file, cost_file
 end
 
-function _limits(graph, comparison, walls)
+function _limits(graph, comparison)
     xs = Float64[]
     ys = Float64[]
     for poses in (
@@ -43,12 +41,6 @@ function _limits(graph, comparison, walls)
         append!(xs, (pose.x for pose in poses))
         append!(ys, (pose.y for pose in poses))
     end
-    if walls !== nothing
-        for (x1, y1, x2, y2) in walls
-            push!(xs, x1, x2)
-            push!(ys, y1, y2)
-        end
-    end
     xmin, xmax = extrema(xs)
     ymin, ymax = extrema(ys)
     dx = max(xmax - xmin, 1e-6)
@@ -56,7 +48,7 @@ function _limits(graph, comparison, walls)
     return (xmin - 0.08dx, xmax + 0.08dx), (ymin - 0.08dy, ymax + 0.08dy)
 end
 
-function _paths(graph, result, walls; title, color, xlimits, ylimits)
+function _paths(graph, result; title, color, xlimits, ylimits)
     plt = plot(;
         aspect_ratio = :equal,
         legend = false,
@@ -66,7 +58,7 @@ function _paths(graph, result, walls; title, color, xlimits, ylimits)
         xlabel = _caption(result, graph.truth),
         ylabel = "",
     )
-    _background!(plt, graph, walls)
+    _background!(plt, graph)
     ix, iy = _xy(result.init_poses)
     tx, ty = _xy(graph.truth)
     px, py = _xy(result.poses)
@@ -78,25 +70,17 @@ function _paths(graph, result, walls; title, color, xlimits, ylimits)
     return plt
 end
 
-function _background!(plt, graph, walls)
+function _background!(plt, graph)
     xs = Float64[]
     ys = Float64[]
-    if walls === nothing
-        for edge in graph.edges
-            edge.kind == :loop || continue
-            a = graph.truth[edge.i]
-            b = graph.truth[edge.j]
-            append!(xs, (a.x, b.x, NaN))
-            append!(ys, (a.y, b.y, NaN))
-        end
-        isempty(xs) || plot!(plt, xs, ys; color = :gray, linestyle = :dash, linewidth = 1, label = "")
-    else
-        for (x1, y1, x2, y2) in walls
-            append!(xs, (x1, x2, NaN))
-            append!(ys, (y1, y2, NaN))
-        end
-        plot!(plt, xs, ys; color = :gray, linewidth = 1.2, label = "")
+    for edge in graph.edges
+        edge.kind == :loop || continue
+        a = graph.truth[edge.i]
+        b = graph.truth[edge.j]
+        append!(xs, (a.x, b.x, NaN))
+        append!(ys, (a.y, b.y, NaN))
     end
+    isempty(xs) || plot!(plt, xs, ys; color = :gray, linestyle = :dash, linewidth = 1, label = "")
     return nothing
 end
 
