@@ -7,6 +7,8 @@
 using PoseGraphSLAM
 using Printf
 
+include("plot_results.jl")
+
 const FIGURES = joinpath(@__DIR__, "figures")
 
 function _deg(radians)
@@ -57,16 +59,18 @@ function main()
         print(line)
         println(io)
 
+        maze, maze_walls = crazy_maze()
         scenarios = (
-            ("Noiseless loop", "noiseless", noiseless_graph(; n = 16, radius = 8.0), 30),
-            ("Moderate noise, one loop closure", "moderate", moderate_graph(), 40),
-            ("Grid, large heading noise", "hard_grid", hard_graph(), 80),
+            ("Noiseless loop", "noiseless", noiseless_graph(; n = 16, radius = 8.0), 30, nothing),
+            ("Moderate noise, one loop closure", "moderate", moderate_graph(), 40, nothing),
+            ("Grid, large heading noise", "hard_grid", hard_graph(), 80, nothing),
+            ("Maze, large heading noise", "maze", maze, 40, maze_walls),
         )
-        for (title, filename, graph, iters) in scenarios
+        for (title, filename, graph, iters, walls) in scenarios
             comparison = compare(graph; max_iters = iters, grad_tol = 1e-6)
             _report(io, title, graph, comparison)
             _report(stdout, title, graph, comparison)
-            save_figures(FIGURES, filename, graph, comparison; subtitle = title)
+            save_figures(FIGURES, filename, graph, comparison; subtitle = title, walls = walls)
         end
 
         println(io, "Disconnected graph")

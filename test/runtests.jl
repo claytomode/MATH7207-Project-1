@@ -89,6 +89,14 @@ end
     @test sp_err.pos_rmse < 0.5
     @test dr_err.pos_rmse > 5
     @test hard_runs.dead_reckoning.cost > 10 * hard_runs.spectral.cost
+
+    maze, _ = crazy_maze()
+    maze_runs = compare(maze; max_iters = 40, grad_tol = 1e-6)
+    maze_dr = pose_error(maze_runs.dead_reckoning.poses, maze.truth)
+    maze_sp = pose_error(maze_runs.spectral.poses, maze.truth)
+    @test maze_sp.pos_rmse < 1.0
+    @test maze_dr.pos_rmse > 5
+    @test maze_runs.dead_reckoning.cost > 10 * maze_runs.spectral.cost
 end
 
 @testset "disconnected graph" begin
