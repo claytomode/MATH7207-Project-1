@@ -1,0 +1,30 @@
+Toy graph, 3 poses and 3 edges. Max |analytic Jacobian − finite difference| = 5.430e-10
+
+Noiseless loop
+--------------
+start               init cost   final cost      iters     pos RMSE   heading RMSE     gradient
+dead reckoning      1.506e-28    1.506e-28          0    6.206e-15      0.000 deg     2.22e-14
+spectral             2.07e-27     2.07e-27          0    5.683e-14      0.000 deg     9.62e-14
+Dead-reckoning heading error at the last pose, before refinement: 0.0 deg
+Both starts finished near the ground truth.
+
+Moderate noise, one loop closure
+--------------------------------
+start               init cost   final cost      iters     pos RMSE   heading RMSE     gradient
+dead reckoning      3.722e+04        4.587          5       0.3532      2.236 deg     2.32e-08
+spectral                135.7        4.587          5       0.3532      2.236 deg      2.1e-08
+Dead-reckoning heading error at the last pose, before refinement: -9.3 deg
+Both starts finished near the ground truth.
+
+Grid, large heading noise
+-------------------------
+start               init cost   final cost      iters     pos RMSE   heading RMSE     gradient
+dead reckoning      5.983e+06    4.282e+04         73        14.74    115.066 deg     3.53e-05
+spectral                 9657        157.6         10       0.1945      1.515 deg     9.85e-07
+Dead-reckoning heading error at the last pose, before refinement: -154.8 deg
+Dead reckoning stopped in a worse basin. The spectral start finished near the ground truth.
+
+Disconnected graph
+------------------
+disconnected graph: poses [4, 5] are not connected to pose 1. The gauge-fixed problem has no solution, so no estimate is returned.
+

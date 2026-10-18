@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="40" y="40" font-family="Segoe UI, Helvetica, sans-serif" font-size="24" font-weight="600" fill="#1c1c1c">Cost versus iteration</text>
+<text x="40" y="68" font-family="Segoe UI, Helvetica, sans-serif" font-size="16" fill="#555555">Grid, large heading noise</text>
+<line x1="110.00" y1="490.00" x2="860.00" y2="490.00" stroke="#222" stroke-width="1.2"/>
+<line x1="110.00" y1="490.00" x2="110.00" y2="100.00" stroke="#222" stroke-width="1.2"/>
+<line x1="110.00" y1="490.00" x2="110.00" y2="496.00" stroke="#222" stroke-width="1"/>
+<text x="110.00" y="512.00" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" fill="#333">0</text>
+<line x1="315.48" y1="490.00" x2="315.48" y2="496.00" stroke="#222" stroke-width="1"/>
+<text x="315.48" y="512.00" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" fill="#333">20</text>
+<line x1="520.96" y1="490.00" x2="520.96" y2="496.00" stroke="#222" stroke-width="1"/>
+<text x="520.96" y="512.00" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" fill="#333">40</text>
+<line x1="726.44" y1="490.00" x2="726.44" y2="496.00" stroke="#222" stroke-width="1"/>
+<text x="726.44" y="512.00" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" fill="#333">60</text>
+<line x1="104.00" y1="404.19" x2="110.00" y2="404.19" stroke="#222" stroke-width="1"/>
+<text x="100.00" y="408.19" text-anchor="end" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" fill="#333">1e+03</text>
+<line x1="104.00" y1="330.77" x2="110.00" y2="330.77" stroke="#222" stroke-width="1"/>
+<text x="100.00" y="334.77" text-anchor="end" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" fill="#333">1e+04</text>
+<line x1="104.00" y1="257.35" x2="110.00" y2="257.35" stroke="#222" stroke-width="1"/>
+<text x="100.00" y="261.35" text-anchor="end" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" fill="#333">1e+05</text>
+<line x1="104.00" y1="183.94" x2="110.00" y2="183.94" stroke="#222" stroke-width="1"/>
+<text x="100.00" y="187.94" text-anchor="end" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" fill="#333">1e+06</text>
+<text x="470" y="540" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="16" fill="#222">Levenberg–Marquardt iteration</text>
+<text x="22" y="300" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="16" fill="#222" transform="rotate(-90 22 300)">cost (log scale)</text>
+<polyline fill="none" stroke="#a93226" stroke-width="2.5" points="110.00,126.90 120.27,126.90 130.55,126.90 140.82,126.90 151.10,135.76 161.37,142.88 171.64,203.29 181.92,242.92 192.19,263.85 202.47,277.97 212.74,283.99 223.01,284.38 233.29,284.39 243.56,284.40 253.84,284.40 264.11,284.40 274.38,284.40 284.66,284.40 294.93,284.40 305.21,284.40 315.48,284.40 325.75,284.40 336.03,284.40 346.30,284.40 356.58,284.40 366.85,284.40 377.12,284.40 387.40,284.40 397.67,284.40 407.95,284.40 418.22,284.40 428.49,284.40 438.77,284.40 449.04,284.40 459.32,284.40 469.59,284.40 479.86,284.40 490.14,284.40 500.41,284.40 510.68,284.40 520.96,284.40 531.23,284.40 541.51,284.40 551.78,284.40 562.05,284.40 572.33,284.40 582.60,284.40 592.88,284.40 603.15,284.40 613.42,284.40 623.70,284.40 633.97,284.40 644.25,284.40 654.52,284.40 664.79,284.40 675.07,284.40 685.34,284.40 695.62,284.40 705.89,284.40 716.16,284.40 726.44,284.40 736.71,284.40 746.99,284.40 757.26,284.40 767.53,284.40 777.81,284.40 788.08,284.40 798.36,284.40 808.63,284.40 818.90,284.40 829.18,284.40 839.45,284.40 849.73,284.40 860.00,284.40"/>
+<polyline fill="none" stroke="#1a5276" stroke-width="2.5" points="110.00,331.88 120.27,331.88 130.55,331.88 140.82,331.88 151.10,360.26 161.37,440.86 171.64,463.06 181.92,463.10 192.19,463.10 202.47,463.10 212.74,463.10"/>
+<circle cx="110.00" cy="331.88" r="3.5" fill="#1a5276"/>
+<circle cx="120.27" cy="331.88" r="3.5" fill="#1a5276"/>
+<circle cx="130.55" cy="331.88" r="3.5" fill="#1a5276"/>
+<circle cx="140.82" cy="331.88" r="3.5" fill="#1a5276"/>
+<circle cx="151.10" cy="360.26" r="3.5" fill="#1a5276"/>
+<circle cx="161.37" cy="440.86" r="3.5" fill="#1a5276"/>
+<circle cx="171.64" cy="463.06" r="3.5" fill="#1a5276"/>
+<circle cx="181.92" cy="463.10" r="3.5" fill="#1a5276"/>
+<circle cx="192.19" cy="463.10" r="3.5" fill="#1a5276"/>
+<circle cx="202.47" cy="463.10" r="3.5" fill="#1a5276"/>
+<circle cx="212.74" cy="463.10" r="3.5" fill="#1a5276"/>
+<line x1="640" y1="108" x2="682" y2="108" stroke="#a93226" stroke-width="2.5"/>
+<text x="690" y="113" font-family="Segoe UI, Helvetica, sans-serif" font-size="14" fill="#222">Dead reckoning</text>
+<line x1="640" y1="132" x2="682" y2="132" stroke="#1a5276" stroke-width="2.5"/>
+<text x="690" y="137" font-family="Segoe UI, Helvetica, sans-serif" font-size="14" fill="#222">Spectral</text>
+</svg>
