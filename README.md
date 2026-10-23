@@ -7,6 +7,15 @@ julia --project=. demo.jl
 julia --project=. -e "using Pkg; Pkg.test()"
 ```
 
+## Figures
+
+`demo.jl` rewrites `figures/`. The copies in the repo match `figures/results.txt`. Dashed is the start, solid is after Levenberg–Marquardt, black is the truth, and gray is a loop closure.
+
+- `noiseless_paths.png`, `noiseless_cost.png`: exact measurements. Both starts recover the loop.
+- `moderate_paths.png`, `moderate_cost.png`: one loop closure. Both starts finish on the same path.
+- `hard_grid_paths.png`, `hard_grid_cost.png`: large heading noise. Dead reckoning stops in the wrong valley.
+- `spiral_paths.png`, `spiral_cost.png`: the same split on a spiral.
+
 ## Sources
 
 Levenberg and Marquardt: standard LM solver.

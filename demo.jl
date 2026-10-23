@@ -1,4 +1,4 @@
-# Tuesday demo for the 2D pose-graph project.
+# demo
 #
 # From this folder:
 #   julia --project=. demo.jl
